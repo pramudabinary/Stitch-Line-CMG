@@ -1,0 +1,57 @@
+<section id="register">
+    <div class="cards">
+      <div class="card-body">
+        <div class="">
+          <h1 class="text-center link-light">SIGN UP FORM</h1>
+        </div>
+        <form class="formLogin mt-2" enctype="utf8" method="post">
+          <div class="column">
+            <div class="mb-3">
+              <label class="form-label link-light" for="inputId"> ID</label>
+              <input  class="form-control form-control-sm" id="inputId" name="id" type="text">
+            </div>
+            <div class="mb-3">
+              <label class="form-label link-light" for="inputName">Name</label>
+              <input class="form-control form-control-sm" id="inputName" name="name" type="text">
+            </div>
+            <div class="mb-3">
+              <label class="form-label link-light" for="inputUserName">User Name</label>
+              <input class="form-control form-control-sm" id="inputUserName" name="username" type="text">
+            </div>
+            <div class="mb-3">
+              <label class="form-label link-light" for="inputContact">Mobile Number</label>
+              <input class="form-control form-control-sm" id="inputContact" name="contact" type="type">
+            </div>
+          </div>
+          <div class="column">
+            <div class="mb-3">
+              <label class="form-label link-light" for="inputDOB">Date of Birth</label>
+              <input class="form-control form-control-sm" id="inputDOB" name="dob" type="date">
+            </div>
+            <div class="mb-3">
+              <label class="form-label link-light" for="gender">Gender</label>
+              <select class="form-control form-control-sm" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label link-light" for="inputLg">Language</label>
+              <input class="form-control form-control-sm" id="inputLg" name="language" type="text">
+            </div>
+            <div class="mb-3">
+              <label class="form-label link-light" for="inputPassword">Password</label>
+              <input class="form-control form-control-sm" id="inputPassword" name="password" type="password">
+            </div>
+          </div>
+          <div class="btnsLogin">
+            <button class="btnSignup btn btn-primary text-center w-50" id="btnRegister" type="button">
+              SignUp
+            </button>
+            <br>
+            <button class="btn btn-link text-light" routerLink="/signin-component" type="button" id="btnHave">Already have an account?</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
