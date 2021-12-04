@@ -1,8 +1,12 @@
 package lk.cmg.test.controller;
 
+import lk.cmg.test.entity.User;
 import lk.cmg.test.entity.request.AuthRequest;
+import lk.cmg.test.service.UserService;
 import lk.cmg.test.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +21,14 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class UserFormController {
     @Autowired
+    private UserService service;
+
+    @Autowired
     private JwtUtil jwtUtil;
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @PostMapping("/authenticate")
+    @PostMapping("/login")
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
         try {
             authenticationManager.authenticate(
@@ -32,5 +39,11 @@ public class UserFormController {
             throw new Exception("Invalid username/password");
         }
         return jwtUtil.generateToken(authRequest.getUsername());
+    }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE,
+            path ="/register" )
+    public void registerUser(@RequestBody User user ){
+        service.registerUser(user);
     }
 }
