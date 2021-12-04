@@ -1,22 +1,18 @@
-package lk.cmg.test.entity;
+package lk.cmg.test.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Pramuda Liyanage <pramudatharika@gmail.com>
- * @since 12/2/21
+ * @since 12/4/21
  **/
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection="User")
-public class User {
-    @Id
+public class UserDTO {
     private String id;
     private String name;
     private String username;
@@ -25,5 +21,4 @@ public class User {
     private String gender;
     private String language;
     private String password;
-
 }

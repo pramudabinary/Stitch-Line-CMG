@@ -1,5 +1,6 @@
 package lk.cmg.test.service;
 
+import lk.cmg.test.dto.UserDTO;
 import lk.cmg.test.entity.User;
 
 /**
@@ -8,5 +9,5 @@ import lk.cmg.test.entity.User;
  **/
 
 public interface UserService {
-    void registerUser(User user);
+    void registerUser(UserDTO dto);
 }

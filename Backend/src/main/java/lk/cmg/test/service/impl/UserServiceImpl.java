@@ -1,5 +1,6 @@
 package lk.cmg.test.service.impl;
 
+import lk.cmg.test.dto.UserDTO;
 import lk.cmg.test.entity.User;
 import lk.cmg.test.repo.UserRepo;
 import lk.cmg.test.service.UserService;
@@ -21,7 +22,8 @@ public class UserServiceImpl implements UserService {
     private ModelMapper mapper;
 
     @Override
-    public void registerUser(User user) {
-        repo.save(user);
+    public void registerUser(UserDTO dto)
+    {
+        repo.save(mapper.map(dto,User.class));
     }
 }

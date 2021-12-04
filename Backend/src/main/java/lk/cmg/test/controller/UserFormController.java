@@ -1,7 +1,7 @@
 package lk.cmg.test.controller;
 
-import lk.cmg.test.entity.User;
-import lk.cmg.test.entity.request.AuthRequest;
+import lk.cmg.test.dto.UserDTO;
+import lk.cmg.test.dto.request.AuthRequest;
 import lk.cmg.test.service.UserService;
 import lk.cmg.test.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ public class UserFormController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE,
             path ="/register" )
-    public void registerUser(@RequestBody User user ){
-        service.registerUser(user);
+    public void registerUser(@RequestBody UserDTO dto ){
+        service.registerUser(dto);
     }
 }
