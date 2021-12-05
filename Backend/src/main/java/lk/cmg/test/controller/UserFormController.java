@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
  **/
 
 @RestController
-@RequestMapping("/api/v1/service")
+@RequestMapping("api/v1/service")
 @CrossOrigin
 public class UserFormController {
     @Autowired
